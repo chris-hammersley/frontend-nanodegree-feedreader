@@ -1,3 +1,18 @@
+http://blog.bandzarewicz.com/blog/2012/03/08/jasmine-cheat-sheet/
+
+Additional custom jasmine matchers
+https://github.com/velesin/jasmine-jquery
+http://www.htmlgoodies.com/beyond/javascript/js-ref/testing-dom-events-using-jquery-and-jasmine-2.0.html
+http://bittersweetryan.github.io/jasmine-presentation/
+http://testdrivenwebsites.com/2010/08/04/custom-jquery-matchers-in-jasmine/
+
+Javascript Koans & More Javascript Tutorials
+https://github.com/mrdavidlaing/javascript-koans
+https://github.com/liammclennan/JavaScript-Koans
+http://javascript.didacto.net/tutorials
+https://medium.com/@davidmansy/what-really-happens-behind-javascript-koans-aboutinheritance-js-df423da152e7
+
+
 # Project Overview
 
 In this project you are given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where you come in.
@@ -23,13 +38,13 @@ You will learn how to use Jasmine to write a number of tests against a pre-exist
 
 # How will I complete this project?
 
-1. Download the [required project assets](http://github.com/udacity/frontend-nanodegree-feedreader).
-2. Review the functionality of the application within your browser.
-3. Explore the application's HTML (*./index.html*), CSS (*./css/style.css*) and JavaScript (*./js/app.js*) to gain an understanding of how it works.
-4. Explore the Jasmine spec file in *./jasmine/spec/feedreader.js*
-5. Edit the allFeeds variable in *./js/app.js* to make the provided test fail and see how Jasmine visualizes this failure in your application.
-6. Return the allFeeds variable to a passing state.
-7. Write a test that loops through each feed in the allFeeds object and ensures it has a URL defined and that the URL is not empty.
+DONE 1. Download the [required project assets](http://github.com/udacity/frontend-nanodegree-feedreader).
+DONE 2. Review the functionality of the application within your browser.
+DONE 3. Explore the application's HTML (*./index.html*), CSS (*./css/style.css*) and JavaScript (*./js/app.js*) to gain an understanding of how it works.
+DONE 4. Explore the Jasmine spec file in *./jasmine/spec/feedreader.js*
+DONE 5. Edit the allFeeds variable in *./js/app.js* to make the provided test fail and see how Jasmine visualizes this failure in your application.
+DONE 6. Return the allFeeds variable to a passing state.
+IN PROGRESS 7. Write a test that loops through each feed in the allFeeds object and ensures it has a URL defined and that the URL is not empty.
 8. Write a test that loops through each feed in the allFeeds object and ensures it has a name defined and that the name is not empty.
 9. Write a new test suite named "The menu".
 10. Write a test that ensures the menu element is hidden by default. You'll have to analyze the HTML and the CSS to determine how we're performing the hiding/showing of the menu element.
