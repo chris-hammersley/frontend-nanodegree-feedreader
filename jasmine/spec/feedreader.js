@@ -91,9 +91,33 @@ $(function() {
         /* TODO: Write a test that ensures when the loadFeed
          * function is called and completes its work, there is at least
          * a single .entry element within the .feed container.
-         * Remember, loadFeed() is asynchronous so this test wil require
+         * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
+
+         var feeds;
+
+         // Ensure each feed has loaded before running the test case
+         beforeEach(function() {
+            feeds = new loadFeed();
+         });
+
+         // Retrieve the Feeds
+         describe('for each feed', function() {
+            var feed;
+
+            beforeEach(function(done) {
+                feed = feeds.getFeed('', {
+                    success: function() {
+                        done();
+                    }
+                });
+            });
+        // Check for at least 1 entry in feed
+        it('contain at least 1 entry', function() {
+            expect(feed).not.toBe('null');
+         });
+     });
     });
 
     /* TODO: Write a new test suite named "New Feed Selection" */
