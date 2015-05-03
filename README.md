@@ -6,6 +6,8 @@ http://chris-hammersley.github.io/frontend-nanodegree-feedreader/
 ## Jasmine
 http://blog.bandzarewicz.com/blog/2012/03/08/jasmine-cheat-sheet/<br />
 http://www.htmlgoodies.com/beyond/javascript/stips/using-jasmine-2.0s-new-done-function-to-test-asynchronous-processes.html<br />
+http://stackoverflow.com/questions/10527394/how-to-test-a-method-in-jasmine-if-the-code-in-beforeeach-is-asynchronous<br />
+http://h30499.www3.hp.com/t5/HP-Software-Developers-Blog/What-goes-around-comes-around-Javascript-testing-with-Jasmine/ba-p/6089901#.VUVjkGTBzGc<br />
 
 ## Additional custom jasmine matchers
 https://github.com/velesin/jasmine-jquery<br />
