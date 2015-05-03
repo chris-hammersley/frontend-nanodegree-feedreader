@@ -22,7 +22,7 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
-        it('have a URL defined', function () {
+        it('have a defined URL', function () {
             allFeeds.forEach(function(feed) {
                 expect(feed.url).toBeDefined();
             });
@@ -31,6 +31,7 @@ $(function() {
         it('have a URL that\'s not empty', function () {
             allFeeds.forEach(function(feed) {
                 expect(feed.url).not.toBe(null);
+                expect(feed.url.length).not.toBe(0);                
             });
          });
 
@@ -38,7 +39,7 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
-        it('have a name defined', function () {
+        it('have a defined name', function () {
             allFeeds.forEach(function(feed) {
                 expect(feed.name).toBeDefined();
             });
@@ -47,6 +48,7 @@ $(function() {
         it('have a name that\'s not empty', function () {
             allFeeds.forEach(function(feed) {
                 expect(feed.name).not.toBe(null);
+                expect(feed.name.length).not.toBe(0);
             });
          });
     });
@@ -54,16 +56,17 @@ $(function() {
     /* TODO: Write a new test suite named "The menu" */
     describe('The Menu', function() {
         // Define the variables used in the tests covered by this test suite
-        var myMenu = $('<div class="menu hidden"></div>');
-        var theBody = $('<body class="menu-hidden">');
+        var myMenu = $('.menu hidden');
+        var theBody = $('.menu-hidden');
         var menuIcon = $('.menu-icon-link');
         var spyEvent = spyOnEvent(menuIcon, 'click');
+        
         /* TODO: Write a test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
-        it('should be hidden by default', function() {
+        it('is hidden by default', function() {
             expect($(myMenu)).not.toBeVisible();
         });
 
@@ -95,29 +98,18 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
 
-         var feeds;
-
-         // Ensure each feed has loaded before running the test case
-         beforeEach(function() {
-            feeds = new loadFeed();
-         });
-
-         // Retrieve the Feeds
-         describe('for each feed', function() {
-            var feed;
-
-            beforeEach(function(done) {
-                feed = feeds.getFeed('', {
-                    success: function() {
-                        done();
-                    }
-                });
+         // Ensure each feed has finished loading before running the test case
+         beforeEach(function(done) {
+            loadFeed(0, function() {
+                done();
             });
-        // Check for at least 1 entry in feed
-        it('contain at least 1 entry', function() {
-            expect(feed).not.toBe('null');
          });
-     });
+
+        // Check for at least 1 entry in feed
+        it('all contain at least 1 feed', function() {
+            var feedEntry = $('.entry').length;
+            expect(feedEntry).toBeGreaterThan(0);
+         });
     });
 
     /* TODO: Write a new test suite named "New Feed Selection" */
